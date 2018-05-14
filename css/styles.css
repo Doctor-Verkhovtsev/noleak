@@ -66,9 +66,6 @@ nav ul {
 nav li {
     display: inline-block;
 }
-nav li.active {
-    color: #fff;
-}
 nav a {
     text-decoration: none;
     color: #bbb;
@@ -533,8 +530,52 @@ h3 {
         width: 95%;
     }
 }
-@media all and (max-width: 479px) {
-    nav ul {
+@media all and (min-width: 480px) {
+    .navi input, .navi label {
         display: none;
+    }
+}
+@media all and (max-width: 479px) {
+    nav li {
+        margin: 0;
+    }
+    .nav {
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        z-index: 100;
+        display: none;
+    }
+    .nav__item {
+        display: block;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        background-color: #000;
+    }
+    .nav__item:hover {
+        color: #fff;
+    }
+    .nav-burger {
+        display: block;
+        width: 25px;
+        height: 23px;
+        cursor: pointer;
+        font-size: 0;
+        background: url("../img/icon-menu.svg") no-repeat;
+        position: absolute;
+        top: 12px;
+        right: 10px;
+        z-index: 1;
+    }
+    .nav-burger__checkbox {
+        display: none;
+    }
+    .nav-burger__checkbox:checked + .nav-burger {
+        background-image: url("../img/icon-cross.svg");
+    }
+    .nav-burger__checkbox:checked ~ .nav {
+        display: block;
     }
 }    
